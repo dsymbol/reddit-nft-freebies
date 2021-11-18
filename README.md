@@ -1,13 +1,23 @@
 # reddit-nft-freebies
 
-Comments on hot [/r/NFTsMarketplace](https://www.reddit.com/r/NFTsMarketplace/) airdrop posts with your wallet address.
+<div align="center">
+<img src="https://user-images.githubusercontent.com/88138099/142375829-577ddfc6-9a8a-4a08-94f2-745babbe858b.png"/></br>
+<i>example of a giveaway being held on the <a href="https://www.reddit.com/r/NFTsMarketplace/">subreddit</a></i>
+</div>
+
+## Description
+The bot automatically comments on hot [/r/NFTsMarketplace](https://www.reddit.com/r/NFTsMarketplace/) airdrop posts with your wallet address in an attempt to claim freebie NFTs.
+
+## Prerequisites
+
+- [Python](https://www.python.org/downloads/)
+- [Docker](https://docs.docker.com/get-docker/) (If you intend on deploying the app as a Docker image)
 
 ## Install
+
 There are two ways to begin using the bot, depending on your preference:
 
 ### Manual
-
-Make sure [Python](https://www.python.org/downloads/) is installed on your system and open a terminal.
 
 ```bash
 git clone https://github.com/dsymbol/reddit-nft-freebies
@@ -16,21 +26,17 @@ pip install praw
 python main.py
 ```
 
-### Docker CLI
-
-Build the image using the `Dockerfile`:
+### Docker
 
 ```
+git clone https://github.com/dsymbol/reddit-nft-freebies
+cd reddit-nft-freebies
 docker build -t reddit-nft-freebies .
-```
-
-Run the image:
-
-```
 docker run -d --name reddit-nft-freebies -v `pwd`/config.py:/app/config.py reddit-nft-freebies:latest
 ```
 
 ## Configuration
+
 Edit `config.py` accordingly:
 
 | Variable                       | Description                      |
