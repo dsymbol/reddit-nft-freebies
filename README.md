@@ -1,12 +1,9 @@
 # reddit-nft-freebies
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/88138099/142375829-577ddfc6-9a8a-4a08-94f2-745babbe858b.png"/></br>
+<img src="https://user-images.githubusercontent.com/88138099/142779007-babd0822-192a-41db-a186-30f0b8f17318.png"/></br>
 <i>example of a giveaway being held on the <a href="https://www.reddit.com/r/NFTsMarketplace/">subreddit</a></i>
 </div>
-
-## Description
-The bot automatically comments on hot [/r/NFTsMarketplace](https://www.reddit.com/r/NFTsMarketplace/) airdrop posts with your wallet address in an attempt to claim freebie NFTs.
 
 ## Prerequisites
 
@@ -28,7 +25,7 @@ python main.py
 
 ### Docker
 
-```
+```bash
 git clone https://github.com/dsymbol/reddit-nft-freebies
 cd reddit-nft-freebies
 docker build -t reddit-nft-freebies .
@@ -37,16 +34,14 @@ docker run -d --name reddit-nft-freebies -v `pwd`/config.py:/app/config.py reddi
 
 ## Configuration
 
-Edit `config.py` accordingly:
+Before running the bot, you must first set it up so it can connect to the Reddit API. Create a config.py file and fill in the following information:
 
-| Variable                       | Description                      |
-| ------------------------------ | ---------------------------------|
-| reddit_client_id               | client id from reddit app        |
-| reddit_client_secret           | client secret from reddit app    |
-| reddit_username                | account username                 |
-| reddit_password                | account password                 |
-| soladdress                     | your solana wallet address       |
-| ethaddress                     | your ethereum wallet address     |
+- `reddit_client_id`: client id from reddit app
+- `reddit_client_secret`: client secret from reddit app
+- `reddit_username`: account username
+- `reddit_password`: account password
+- `soladdress`: your solana wallet address
+- `ethaddress`: your ethereum wallet address
 
 #### Create a Reddit app
 
