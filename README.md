@@ -36,12 +36,12 @@ docker run -d --name reddit-nft-freebies -v `pwd`/config.py:/app/config.py reddi
 
 Before running the bot, you must first set it up so it can connect to the Reddit API. Create a config.py file and fill in the following information:
 
-- `reddit_client_id`: client id from reddit app
-- `reddit_client_secret`: client secret from reddit app
-- `reddit_username`: account username
-- `reddit_password`: account password
-- `soladdress`: your solana wallet address
-- `ethaddress`: your ethereum wallet address
+- `REDDIT_CLIENT_ID`: client id from reddit app
+- `REDDIT_CLIENT_SECRET`: client secret from reddit app
+- `REDDIT_USERNAME`: account username
+- `REDDIT_PASSWORD`: account password
+- `ETH_ADDRESS`: your ethereum wallet address
+- `SOL_ADDRESS`: your solana wallet address
 
 #### Create a Reddit app
 
