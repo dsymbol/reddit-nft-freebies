@@ -1,6 +1,5 @@
-# reddit-nft-freebies
-
 <div align="center">
+<h1>Reddit NFT Freebies</h1>
 <img src="https://user-images.githubusercontent.com/88138099/142779007-babd0822-192a-41db-a186-30f0b8f17318.png"/></br>
 <i>example of a giveaway being held on the <a href="https://www.reddit.com/r/NFTsMarketplace/">subreddit</a></i>
 </div>
@@ -38,8 +37,8 @@ Before running the bot, you must first set it up so it can connect to the Reddit
 
 - `REDDIT_CLIENT_ID`: client id from reddit app
 - `REDDIT_CLIENT_SECRET`: client secret from reddit app
-- `REDDIT_USERNAME`: account username
-- `REDDIT_PASSWORD`: account password
+- `REDDIT_USERNAME`: reddit account username
+- `REDDIT_PASSWORD`: reddit account password
 - `ETH_ADDRESS`: your ethereum wallet address
 - `SOL_ADDRESS`: your solana wallet address
 
