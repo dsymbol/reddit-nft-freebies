@@ -18,7 +18,7 @@ There are two ways to begin using the bot, depending on your preference:
 ```bash
 git clone https://github.com/dsymbol/reddit-nft-freebies
 cd reddit-nft-freebies
-pip install praw
+pip install -r requirements.txt
 python main.py
 ```
 
