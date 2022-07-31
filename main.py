@@ -19,13 +19,9 @@ def load_file(file):
 
 
 def get_nft():
-    account = API(REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD)
-    account.shadowban_check()
-    reddit = account.authorize()
-    account.authorized(reddit)
-    reddit.read_only = False
+    account = API(REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD).authorize()
     commented = load_file("comment.db")
-    subreddit = reddit.subreddit("NFTsMarketplace")
+    subreddit = account.subreddit("NFTsMarketplace")
     keywords = ["wallet", "address"]
     sleep(1)
 
@@ -37,7 +33,7 @@ def get_nft():
                     commented.append(post)
                     with open('comment.db', 'a') as f:
                         f.write(f"{str(post)}\n")
-                    post.reply(ETH_ADDRESS)
+                    post.reply(body=ETH_ADDRESS)
                     post.upvote()
                     print(f'{post.title}')
                     rndm_sleep = random.randint(300, 600);

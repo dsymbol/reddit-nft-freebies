@@ -1,31 +1,34 @@
-from prawcore import ResponseException
-from time import sleep
-import requests
 import random
-import praw
 import string
 import sys
+from time import sleep
+
+import praw
+import requests
+from prawcore import ResponseException
+
 
 class API:
     def __init__(self, client_id, client_secret, username, password):
-        self.client_id = client_id
-        self.client_secret = client_secret
         self.username = username
-        self.password = password
         self.user_agent = API.uagent(10)
-
-    def authorize(self):
-        return praw.Reddit(
-            client_id=self.client_id,
-            client_secret=self.client_secret,
+        self.auth = praw.Reddit(
+            client_id=client_id,
+            client_secret=client_secret,
             user_agent=self.user_agent,
             username=self.username,
-            password=self.password,
+            password=password,
         )
 
-    def authorized(self, reddit):
+    def authorize(self):
+        self.shadowban_check()
+        self.authorized()
+        self.auth.read_only = False
+        return self.auth
+
+    def authorized(self):
         try:
-            reddit.user.me()
+            self.auth.user.me()
         except ResponseException:
             print("Invalid credentials")
             sys.exit()
