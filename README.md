@@ -1,13 +1,13 @@
 <div align="center">
 <h1>Reddit NFT Freebies</h1>
 <img src="https://user-images.githubusercontent.com/88138099/142779007-babd0822-192a-41db-a186-30f0b8f17318.png"/></br>
-<i>example of a giveaway being held on the <a href="https://www.reddit.com/r/NFTsMarketplace/">subreddit</a></i>
+<i>example of a giveaway being held on the <a href="https://www.reddit.com/r/NFTsMarketplace">subreddit</a></i>
 </div>
 
 ## Prerequisites
 
-- [Python](https://www.python.org/downloads/)
-- [Docker](https://docs.docker.com/get-docker/) (If you intend on deploying the app as a Docker image)
+- [Python](https://www.python.org/downloads)
+- [Docker](https://docs.docker.com/get-docker) (If you intend on deploying the app as a Docker image)
 
 ## Install
 
@@ -15,8 +15,8 @@ There are two ways to begin using the bot, depending on your preference:
 
 ### Manual
 
-```bash
-git clone https://github.com/dsymbol/reddit-nft-freebies
+```sh
+git clone https://github.com/dsymbol/reddit-nft-freebies.git
 cd reddit-nft-freebies
 pip install -r requirements.txt
 python main.py
@@ -24,8 +24,8 @@ python main.py
 
 ### Docker
 
-```bash
-git clone https://github.com/dsymbol/reddit-nft-freebies
+```sh
+git clone https://github.com/dsymbol/reddit-nft-freebies.git
 cd reddit-nft-freebies
 docker build -t reddit-nft-freebies .
 docker run -d --name reddit-nft-freebies -v `pwd`/config.py:/app/config.py reddit-nft-freebies:latest
@@ -40,7 +40,6 @@ Before running the bot, you must first set it up so it can connect to the Reddit
 - `REDDIT_USERNAME`: reddit account username
 - `REDDIT_PASSWORD`: reddit account password
 - `ETH_ADDRESS`: your ethereum wallet address
-- `SOL_ADDRESS`: your solana wallet address
 
 #### Create a Reddit app
 
