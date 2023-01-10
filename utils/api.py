@@ -45,8 +45,7 @@ class API:
         if "error" in response:
             if response["error"] == 404:
                 raise Exception(f"{self.username} is shadowbanned.")
-            else:
-                print(response)
+            print(response)
         else:
             print(f"{self.username} is not shadowbanned!")
 
