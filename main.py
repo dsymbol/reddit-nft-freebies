@@ -9,8 +9,7 @@ def load_file(file):
     try:
         l = []
         with open(file, 'r') as f:
-            for line in f:
-                l.append(line.rstrip())
+            l.extend(line.rstrip() for line in f)
         return l
     except FileNotFoundError:
         with open('comment.db', 'w') as f:
