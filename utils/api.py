@@ -1,6 +1,7 @@
 import random
 import string
 import sys
+import logging
 from time import sleep
 
 import praw
@@ -19,6 +20,7 @@ class API:
             username=self.username,
             password=password,
         )
+        self.log = logging.getLogger(__name__)
 
     def authorize(self):
         self.shadowban_check()
@@ -29,25 +31,25 @@ class API:
     def authorized(self):
         try:
             self.auth.user.me()
-        except ResponseException:
-            print("Invalid credentials")
+        except ResponseException as e:
+            self.log.error("Invalid Credentials")
+            self.log.error(str(e))
             sys.exit()
         else:
-            print(f"Logged in as: {self.username}")
-            width = 13 + len(self.username)
-            print('-' * width)
+            self.log.info(f"Logged in as: {self.username}")
             sleep(1)
 
     def shadowban_check(self):
-        print("Performing a shadowban check")
+        self.log.info("Performing a shadowban check")
         response = requests.get(f"https://www.reddit.com/user/{self.username}/about.json",
                                 headers={'User-agent': f"{self.user_agent}"}).json()
         if "error" in response:
             if response["error"] == 404:
-                raise Exception(f"{self.username} is shadowbanned.")
-            print(response)
+                self.log.error(f"{self.username} is shadowbanned.")
+                sys.exit()
+            self.log.debug(response)
         else:
-            print(f"{self.username} is not shadowbanned!")
+            self.log.info(f"{self.username} is not shadowbanned!")
 
     @staticmethod
     def uagent(length):
