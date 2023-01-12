@@ -49,7 +49,7 @@ def get_nft():
                         or post not in commented and keywords[1] in post.link_flair_text):
                     commented.append(post)
                     # Write the post to comment.db
-                    with open('comment.db', 'a') as f:
+                    with open('comments.db', 'a') as f:
                         f.write(f"{str(post)}\n")
                     # Reply to the post with ETH_ADDRESS and upvote
                     post.reply(body=ETH_ADDRESS)
