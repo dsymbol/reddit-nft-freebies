@@ -40,7 +40,6 @@ Before running the bot, you must first set it up so it can connect to the Reddit
 - `REDDIT_USERNAME`: reddit account username
 - `REDDIT_PASSWORD`: reddit account password
 - `ETH_ADDRESS`: your ethereum wallet address
-- `SOL_ADDRESS`: your solana wallet address
 
 #### Create a Reddit app
 
